@@ -5,7 +5,7 @@ def generate_password(length,include_digits=True,include_special=True):
     letters=string.ascii_letters
     digits=string.digits
     special_chars=string.punctuation
-
+    
     char_pool=letters
 
     if include_digits:
