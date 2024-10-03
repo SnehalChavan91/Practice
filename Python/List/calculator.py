@@ -1,20 +1,20 @@
-class Calculator():
-    def add(self,a,b):
-        return a+b
-    
-    def subtract(self,a,b):
-        return a-b
 
-    def multiply(self,a,b):
-        return a*b
+def add(a,b):
+    return a+b
 
-    def divide(self,a,b):
-        if b==0:
-            return "Can not be divide"
-        return a/b
+def subtract(a,b):
+    return a-b
+
+def multiply(a,b):
+    return a*b
+
+def divide(a,b):
+    if b==0:
+        return "Can not be divide"
+    return a/b
 
 def calculate():
-    my_calculator=Calculator()
+    #my_calculator=Calculator()
     
     while True:
         operation = input("Enter the operation (+, -, *, /) or 'q' to quit: ").strip()
@@ -32,12 +32,13 @@ def calculate():
         b=float(input("Enter the second number").strip())
 
         if operation == "+":
-            print(f"Result: {my_calculator.add(a, b)}")
+            print((add(a, b)))
+
         elif operation == "-":
-            print(f"Result: {my_calculator.subtract(a, b)}")
+            print(f"Result: {subtract(a, b)}")
         elif operation == "*":
-            print(f"Result: {my_calculator.multiply(a, b)}")
+            print(f"Result: {multiply(a, b)}")
         elif operation == "/":
-            print(f"Result: {my_calculator.divide(a, b)}")
+            print(f"Result: {divide(a, b)}")
 if __name__ == "__main__":
     calculate()
