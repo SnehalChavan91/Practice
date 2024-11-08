@@ -1,48 +1,37 @@
 import random
+from collections import Counter
 
-name = input("What is your name? ")
+fruits='''apple,banana,cherry,berry,watermelon,muskmelon,lemon,jamun,pineapple,guava,orange'''
+fruits=fruits.split(",")
 
-print("Good Luck ! ", name)
+fruit=random.choice(fruits)
+print(fruit)
 
-words = ['rainbow', 'computer', 'science', 'programming',
-         'python', 'mathematics', 'player', 'condition',
-         'reverse', 'water', 'board', 'geeks']
+chances=len(fruit)+2
+guessedFruit=" "
+if chances:
+    while chances>0:
+        chances-=1
+        guess=input("Enter the character of the guessed fruit ")
+        if guess in fruit:
+            k=fruit.count(guess)
+            for _ in range(k):
+                guessedFruit+=guess
 
-word = random.choice(words)
+        for char in fruit:
+            if (Counter(fruit)==Counter(guessedFruit)):
+                print("The fruit is ",fruit)
+                print("You win !")
+                break
+                break
+            elif char in guessedFruit and (Counter(fruit)!=Counter(guessedFruit)):
+                print(char,end=" ") 
+                continue
+            else:
+                print("_",end=" ")
+        
+elif not chances and (Counter(fruit)!=Counter(guessedFruit)):
+    print("You lost! Try again.")
+    print("The fruit is {}".format(fruit))
 
-print("Guess the characters")
-
-guesses = ''
-turns = 12
-
-while turns > 0:
-
-    failed = 0
-
-    for char in word:
-
-        if char in guesses:
-            print(char, end=" ")
-
-        else:
-            print("_")
-            failed += 1
-
-    if failed == 0:
-        print("You Win")
-        print("The word is: ", word)
-        break
-
-    print()
-    guess = input("guess a character:")
-
-    guesses += guess
-
-    if guess not in word:
-
-        turns -= 1
-        print("Wrong")
-        print("You have", + turns, 'more guesses')
-
-        if turns == 0:
-            print("You Loose")
+    
