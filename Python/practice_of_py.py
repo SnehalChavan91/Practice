@@ -1,0 +1,5 @@
+num=input("Enter the comma seperated integers")
+print(num)
+l=num.split(',')
+print(l)
+print(tuple(l))

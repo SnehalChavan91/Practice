@@ -1,0 +1,14 @@
+h1{
+    font-size: larger;
+    background-color: aqua;
+    border: brown;
+    color: #ff00ae !important;
+}
+.head-style{
+    color: chartreuse;
+    background-color: darkcyan;
+}
+#heading-four{
+    color: blueviolet;
+    background-color: aqua;
+}
